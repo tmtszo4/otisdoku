@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f6efe6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Otisdoku">
+  <title>Otisdoku</title>
+  <link rel="icon" href="assets/otis-head.png">
+  <link rel="apple-touch-icon" href="assets/otis-head.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <button class="icon-btn" id="prev" aria-label="Előző szint">‹</button>
+      <div class="title">
+        <h1>Otisdoku</h1>
+        <div class="level" id="level-label">1. szint</div>
+      </div>
+      <button class="icon-btn" id="next" aria-label="Következő szint">›</button>
+    </header>
+
+    <p class="message" id="message">Keresd meg Otist! Minden sorban, oszlopban és színes területen pontosan egy Otis van, és nem érhetnek egymáshoz.</p>
+
+    <div class="board-wrap">
+      <div class="board" id="board" role="grid" aria-label="Játéktábla"></div>
+    </div>
+
+    <nav class="actions">
+      <button class="action" id="undo"><span aria-hidden="true">↶</span>Vissza</button>
+      <button class="action" id="hint"><span aria-hidden="true">💡</span>Tipp</button>
+      <button class="action" id="clear"><span aria-hidden="true">⟲</span>Törlés</button>
+      <button class="action" id="help-btn"><span aria-hidden="true">?</span>Szabályok</button>
+    </nav>
+  </main>
+
+  <dialog class="sheet" id="help">
+    <h2>Hogyan kell játszani?</h2>
+    <ul>
+      <li>Minden <b>sorban</b> pontosan egy Otis van.</li>
+      <li>Minden <b>oszlopban</b> pontosan egy Otis van.</li>
+      <li>Minden <b>színes területen</b> pontosan egy Otis van.</li>
+      <li>Két Otis <b>nem érhet egymáshoz</b>, átlósan sem.</li>
+    </ul>
+    <p>Koppints egyszer egy mezőre: <b>✕</b> (itt biztosan nincs).<br>
+       Koppints még egyszer: <b>Otis</b>.<br>
+       Húzd az ujjad a mezőkön, hogy több ✕-et rakj le egyszerre.</p>
+    <button class="primary" id="help-close">Értem!</button>
+  </dialog>
+
+  <dialog class="sheet win" id="win">
+    <img src="assets/otis.png" alt="Otis a hóban" class="win-photo">
+    <h2>Megtaláltad Otist! 🐾</h2>
+    <p id="win-text"></p>
+    <button class="primary" id="win-next">Következő szint</button>
+    <button class="secondary" id="win-close">Tábla megtekintése</button>
+  </dialog>
+
+  <script src="puzzle.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

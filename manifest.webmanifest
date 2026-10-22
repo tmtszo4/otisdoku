@@ -1,0 +1,10 @@
+{
+  "name": "Otisdoku",
+  "short_name": "Otisdoku",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6efe6",
+  "theme_color": "#f6efe6",
+  "icons": [{ "src": "assets/otis-head.png", "sizes": "192x192", "type": "image/png" }]
+}
